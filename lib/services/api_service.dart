@@ -361,11 +361,14 @@ Future<dynamic> subscribeToPlan(String token, String planKey) async {
   }
 
 Future<Map<String, dynamic>?> register(
-    String name, String phoneNumber, String password, String codeCommercial) async {
+    String name, String lastName, String phoneNumber, String password, String codeCommercial) async {
+
+  String fullName = "$firstName $lastName";
+
   final response = await http.post(
     Uri.parse('$baseUrl/register'),
     body: {
-      'name': name,
+      'name': fullName,
       'phone_number': phoneNumber,
       'password': password,
       'codeCommercial': codeCommercial,

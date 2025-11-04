@@ -15,6 +15,7 @@ class Inscription extends StatefulWidget {
 }
 
 class _InscriptionState extends State<Inscription> {
+  final TextEditingController firstNameController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -62,6 +63,9 @@ void register() async {
       barrierDismissible: false,
       builder: (_) => const Center(child: CircularProgressIndicator()),
     );
+
+    final combinedName =
+    '${firstNameController.text.trim()} ${nameController.text.trim()}'.trim();
 
     var data = await apiService.register(
       nameController.text,
@@ -169,6 +173,7 @@ void register() async {
                 child: Column(
                   children: [
                     CustomInputField(hintText : "Nom", controller: nameController,icon: Icons.person,),
+                    CustomInputField(hintText: "Prénom", controller: firstNameController, icon: Icons.person,),
                     CustomInputField(hintText :"Numéro de tel",
                         controller: phoneNumberController,
                         keyboardType: TextInputType.phone,icon: Icons.phone_android,),
