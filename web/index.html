@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Budget Organisé</title>
+  <meta name="description" content="Budget Organisé - BO Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Splash screen full-screen */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #4f7fc6; /* Couleur de fond BO */
+      font-family: sans-serif;
+    }
+    .splash-container {
+      text-align: center;
+      color: white;
+    }
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      background: url('assets/icons/app_icon.png') no-repeat center center;
+      background-size: contain;
+    }
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #ffffff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-container">
+    <div class="logo"></div>
+    <div class="spinner"></div>
+    <p>Veuillez patienter s'il vous plait...</p>
+    <p>Easy Finance B.O en cours de chargement</p>
+  </div>
+
+  <!-- Flutter bootstrap -->
+  <script src="flutter.js" defer></script>
+  <script src="main.dart.js" type="application/javascript" defer></script>
+</body>
+</html>
